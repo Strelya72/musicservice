@@ -1,0 +1,48 @@
+﻿@model ShopCartViewModel
+
+<div class="container">
+
+    <div class="row" style="">
+
+        <div class="col-6" style="display: inline-grid;">
+            <a onclick="backAway()" class="btn btn-primary">Вернуться</a>
+        </div>
+
+        <div class="col-6" style="display: inline-grid;">
+            <a class="btn btn-success" asp-controller="ShopCart" asp-action="RemoveAll">Оплатить всё @Model.SumPrice.ToString("c")</a>
+        </div>
+    </div>
+
+    <div class="row">
+
+        @foreach (var item in Model.ShopCart.ShopItemsList)
+        {
+
+            <div class="col-6">
+                <div class="alert alert-warning mt-3" style="height: max-content;">
+                    <div style="width: auto;padding: 1% 2%;" class="row justify-content-md-center">
+                        <div style="display: contents;" class="col-6">
+                            <img src="@item.instance.ImageUrl" alt="Alternate Text" style="max-width: 140px;">
+                        </div>
+
+                        <div style="display: grid;text-align: center;" class="col-6">
+                            <b>Песня: </b> @item.instance.Title <br>
+                            <b>Стоимость: </b> @item.instance.Price.ToString("c") <br>
+                        </div>
+
+                        <div style="display: block;padding-top: 2%;" class="col-6">
+                            <a class="btn btn-danger" 
+                               style="display: block; width: initial;"
+                               asp-controller="ShopCart" asp-action="RemoveFromCart" asp-route-itemId="@item.instance.Id">Удалить</a>
+                        </div>
+                        <div style="display: block;padding-top: 2%;" class="col-6">
+                            <a href="" class="btn btn-success" style="display: block;width: initial;">Оплатить</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<script>shopPage()</script>

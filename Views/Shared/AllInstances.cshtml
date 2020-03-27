@@ -1,0 +1,12 @@
+﻿@model MusicInstance
+
+<div class="col-md-3">
+    <div class="card mb-3 shadow-sm" style="width: 12rem;">
+        <img src="@Model.ImageUrl" class="card-img-top" alt="nure image">
+        <div class="card-body">
+            <h5 class="card-title">@Model.Title</h5>
+            <p class="card-text">Some quick example text.</p>
+            <a href="#" class="btn btn-primary">@Model.Price.ToString("c")</a>
+        </div>
+    </div>
+</div>

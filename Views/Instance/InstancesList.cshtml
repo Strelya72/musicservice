@@ -1,0 +1,32 @@
+﻿@model InstancesViewModel
+
+<div class="album py-5 pl-5 bg-light" style="border-radius: 10px; margin-bottom: 50px;">
+    <div class="row">
+
+        @{
+            foreach (MusicInstance instance in Model.AllInstances)
+            {
+
+                <div class="col-md-3">
+                    <div class="card mb-3 shadow-sm" style="width: 12rem;">
+                        <img src="@instance.ImageUrl" class="card-img-top" alt="nure image">
+                        <div class="card-body">
+                            <h5 class="card-title">@instance.Title</h5>
+                            <p class="card-text">
+                                @Model.AllAlbums.FirstOrDefault(c => c.Id == instance.AlbumID).Title
+                            </p>
+                            <a class="btn btn-primary" asp-controller="ShopCart" asp-action="AddToCart" asp-route-itemId="@instance.Id">@instance.Price.ToString("c")</a>
+                        </div>
+                    </div>
+                </div> 
+
+                //@Html.Partial("AllInstances", instance);
+            }
+        }
+    </div>
+</div>
+
+<asp:Button ID="Button2" runat="server" Text="Call Button Click" Style="display:none" OnClick="" />
+
+
+<script>instance()</script>

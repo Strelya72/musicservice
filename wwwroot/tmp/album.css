@@ -1,0 +1,40 @@
+.jumbotron {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-bottom: 0;
+    background-color: transparent;
+}
+
+@media (min-width: 368px) {
+    .jumbotron {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+}
+
+.jumbotron p:last-child {
+    margin-bottom: 0;
+}
+
+.jumbotron-heading {
+    font-weight: 300;
+    color: white;
+}
+
+.jumbotron .container {
+    max-width: 40rem;
+}
+
+footer {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+    footer p {
+        margin-bottom: .25rem;
+    }
+
+.card-body {
+    display: contents;
+    text-align: center;
+}

@@ -1,0 +1,24 @@
+﻿@model HomeViewModel
+
+<div class="album py-5 pl-5 bg-light" style="border-radius: 10px; margin-bottom: 50px;">
+    <div class="row">
+
+        @{
+            foreach (Album instance in Model.Albums)
+            {
+                <div class="col-md-3">
+                    <div class="card mb-3 shadow-sm" style="width: 12rem;">
+                        <img src="@instance.ImageUrl" class="card-img-top" alt="nure image">
+                        <div class="card-body">
+                            <h5 class="card-title">@instance.Title</h5>
+                            <p class="card-text">@instance.Price</p>
+                            <a class="btn btn-primary" asp-controller="Instance" asp-action="InstancesList" asp-route-albumId="@instance.Id">Просмотреть</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</div>
+
+<script>home()</script>

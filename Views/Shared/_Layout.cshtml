@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/css/main.css" type="text/css">
+    <link rel="stylesheet" href="~/tmp/album.css" type="text/css">
+    <script src="~/js/main.js"></script>
+    <script src="~/js/goBack.js"></script>
+</head>
+<body>
+
+    <header>
+        <div class="collapse bg-dark" id="navbarHeader">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 col-md-7 py-4">
+                        <h4 class="text-white">О нас</h4>
+                        <p class="text-muted">Онлайн сервис, позволяющий вам приобретать музыкальные композиции любимых авторов.</p>
+                    </div>
+                    <div class="col-sm-4 offset-md-1 py-4">
+                        <h4 class="text-white">Contact</h4>
+                        <ul class="list-unstyled">
+                            <li><a href="http://www.twitter.com/share" target="_blank" class="text-white">Tweet on Twitter</a></li>
+                            <li><a href="https://www.facebook.com/sharer/sharer.php" target="_blank" class="text-white">Post on Facebook</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="navbar navbar-dark bg-dark shadow-sm">
+            <div class="container d-flex justify-content-between">
+                <a href="#" class="navbar-brand d-flex align-items-center">
+                    <img style="width:60px;padding-right: 5px;" src="https://5bucks.ru/wp-content/uploads/2016/12/w512h5121379964654Music.png">
+                    <strong style="margin-top: 25px;">Музыкальный сервис</strong>
+                </a>
+                <a asp-controller="EditInstance" asp-action="Index" class="text-secondary" style="left: 340px;position: relative;">Редактирование</a>
+                <a asp-controller="Login" asp-action="Index" class="text-secondary" style="left: 180px;position: relative;">Войти</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main role="main" style="margin-bottom:50px">
+        <section class="jumbotron text-center">
+            <div class="container">
+                <h1 class="jumbotron-heading">@ViewBag.Title</h1>
+                <p class="lead text-muted">@ViewBag.Description</p>
+                <p>
+                    <a asp-controller="Home" asp-action="Index" class="btn my-2" id="albumBtn">Альбомы</a>
+                    <a asp-controller="Instance" asp-action="InstancesList" asp-route-albumId="-1" class="btn my-2" id="albumInstance">Песни</a>
+                </p>
+            </div>
+        </section>
+
+        <div class="container">
+            @RenderBody()
+        </div>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
